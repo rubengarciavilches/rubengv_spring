@@ -1,0 +1,15 @@
+package com.rubengv.portfolio.exceptions;
+
+import org.springframework.http.HttpStatus;
+
+public class ExceptionWithStatus extends RuntimeException{
+    private final HttpStatus status;
+    public ExceptionWithStatus(String message, HttpStatus status) {
+        super(message);
+        this.status = status;
+    }
+
+    public HttpStatus getStatus() {
+        return status;
+    }
+}
