@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path = "api/v1/auth")
-@CrossOrigin(origins = "http://noteit.localhost:3000", allowCredentials = "true", exposedHeaders = "Authorization")
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true", exposedHeaders = "Authorization")
 public class TokenController {
     private final TokenService tokenService;
 

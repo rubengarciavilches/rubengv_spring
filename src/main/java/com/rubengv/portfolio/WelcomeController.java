@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "http://noteit.localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000")
 public class WelcomeController {
     @GetMapping("api/v1/")
     public ResponseEntity<CustomResponse<String>> welcome() {

@@ -14,7 +14,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping(path = "api/v1/user")
-@CrossOrigin(origins = "http://noteit.localhost:3000", allowCredentials = "true", exposedHeaders = "Authorization")
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true", exposedHeaders = "Authorization")
 public class UserController {
 
     private final UserService userService;
