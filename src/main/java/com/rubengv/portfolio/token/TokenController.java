@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(path = "api/v1/auth")
 //@CrossOrigin(origins = {"http://localhost:3000", "https://www.rubengv.com"}, allowCredentials = "true", exposedHeaders = "Authorization")
-public class TokenController {
+public class TokenController { 
     private final TokenService tokenService;
 
     @Autowired
