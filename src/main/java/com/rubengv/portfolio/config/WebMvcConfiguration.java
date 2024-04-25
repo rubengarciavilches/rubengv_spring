@@ -22,7 +22,7 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
                 .allowedHeaders("*") // *
                 .exposedHeaders("*") // *
                 .allowedMethods("GET", "POST", "PUT", "DELETE") // *
-                .allowedOrigins("http://localhost:3000", "https://www.rubengv.com") // *
-                .allowCredentials(true);  // false
+                .allowedOrigins("*") // *
+                .allowCredentials(false);  // false
     }
 }

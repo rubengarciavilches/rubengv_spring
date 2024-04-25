@@ -33,7 +33,7 @@ public class UserController {
     @GetMapping(path = "{userId}")
     public ResponseEntity<CustomResponse<User>> getUser(
             @PathVariable("userId") UUID userID,
-            @CookieValue UUID token){
+            @RequestParam UUID token){
         try {
             User user = userService.getUser(userID, token);
             return ResponseEntity.ok(new CustomResponse<>(user, null));

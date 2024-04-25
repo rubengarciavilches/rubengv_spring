@@ -23,7 +23,7 @@ public class NoteController {
     @GetMapping(path = "{userId}")
     public ResponseEntity<CustomResponse<List<Note>>> getNotesByUserID(
             @PathVariable("userId") UUID userID,
-            @CookieValue UUID token) {
+            @RequestParam UUID token) {
         try {
             List<Note> notes = noteService.getAllNotes(userID, token);
             return ResponseEntity.ok(new CustomResponse<>(notes, null));
@@ -35,7 +35,7 @@ public class NoteController {
     @PostMapping(path = "{userId}")
     public ResponseEntity<CustomResponse<Note>> addNewNote(
             @PathVariable("userId") UUID userID,
-            @CookieValue UUID token,
+            @RequestParam UUID token,
             @RequestBody NoteDTO noteDTO) {
         try {
             Note note = noteService.addNewNote(userID, token, noteDTO.title, noteDTO.content);
@@ -49,7 +49,7 @@ public class NoteController {
     public ResponseEntity<CustomResponse<Note>> editNote(
             @PathVariable("userId") UUID userID,
             @PathVariable("noteId") UUID noteID,
-            @CookieValue UUID token,
+            @RequestParam UUID token,
             @RequestBody(required = false) NoteDTO noteDTO) {
         try {
             Note note = noteService.editNote(userID, noteID, token, noteDTO.title, noteDTO.content);
@@ -63,7 +63,7 @@ public class NoteController {
     public ResponseEntity<CustomResponse<String>> deleteNote(
             @PathVariable("userId") UUID userID,
             @PathVariable("noteId") UUID noteID,
-            @CookieValue UUID token) {
+            @RequestParam UUID token) {
         try {
             noteService.deleteNote(userID, noteID, token);
             return ResponseEntity.ok(new CustomResponse<>("Deleted", null));
