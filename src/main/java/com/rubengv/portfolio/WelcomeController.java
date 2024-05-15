@@ -14,6 +14,6 @@ public class WelcomeController {
 
     @GetMapping("api/v1/")
     public ResponseEntity<CustomResponse<String>> welcome() {
-        return ResponseEntity.ok(new CustomResponse<>("Welcome to the API! Please refer to the documentation for available endpoints.", null));
+        return ResponseEntity.ok(new CustomResponse<>("Welcome to the API! Please refer to the documentation for available endpoints: <a href=\"https://github.com/rubengarciavilches/rubengv_spring\">GitHub Project</a>", null));
     }
 }
